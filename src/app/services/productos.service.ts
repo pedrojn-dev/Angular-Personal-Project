@@ -34,7 +34,7 @@ export class ProductosService {
 
   getProducto( id: string ) {
 
-    return this.http.get(`https://angular-html-66529.firebaseio.com/productos/${ id }.json`)
+    return this.http.get(`https://angular-html-66529.firebaseio.com/productos/${ id }.json`);
 
 
   }
@@ -42,14 +42,14 @@ export class ProductosService {
   buscarProducto( termino: string ) {
 
     if ( this.productos.length === 0 ) {
-      //cargar productos
+      // cargar productos
       this.cargarProductos().then( () => {
         // ejecutar después de tener los productos
         // Aplicar filtro
         this.filtrarProductos( termino );
       });
     } else {
-      //aplicar el filtro
+      // aplicar el filtro
       this.filtrarProductos( termino );
     }
 
